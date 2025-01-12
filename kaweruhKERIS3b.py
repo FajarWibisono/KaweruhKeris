@@ -13,7 +13,7 @@ os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 # Konfigurasi halaman
 st.set_page_config(
-    page_title="KAWERUH KERIS PPBN",
+    page_title="KAWERUH KERIS PPBPN",
     page_icon="📓",
     layout="wide"
 )
