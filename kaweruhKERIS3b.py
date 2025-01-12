@@ -48,7 +48,7 @@ def initialize_rag():
         documents = loader.load()
         
         # Split documents
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=2799, chunk_overlap=234)
         texts = text_splitter.split_documents(documents)
         
         # Create embeddings
