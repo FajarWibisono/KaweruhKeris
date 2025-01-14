@@ -107,7 +107,7 @@ def initialize_rag():
         # 4.5 Menginisialisasi LLM (ChatGroq)
         llm = ChatGroq(
             temperature=0.54,
-            model_name="qroq-merdeka-11B",
+            model_name="groq-merdeka-11B",
             max_tokens=1024
         )
 
