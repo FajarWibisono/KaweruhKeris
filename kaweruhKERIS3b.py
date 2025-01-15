@@ -91,7 +91,7 @@ def initialize_rag():
         documents = loader.load()
 
         # 4.2 Split Dokumen
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1800, chunk_overlap=234)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1800, chunk_overlap=180)
         texts = text_splitter.split_documents(documents)
 
         # 4.3 Embedding Berbahasa Indonesia
