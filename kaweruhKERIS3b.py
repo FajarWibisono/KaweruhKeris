@@ -111,8 +111,9 @@ def initialize_rag():
             max_tokens=1024
         )
 
-        # 4.6 Membuat Memory untuk menyimpan riwayat percakapan
-        memory = ConversationBufferMemory(
+        # 4.6 Membuat Memory untuk hanya menyimpan 1 pesan terakhir
+        memory = ConversationBufferWindowMemory(
+            k=1,  # hanya simpan 1 pesan terakhir
             memory_key='chat_history',
             return_messages=True,
             output_key='answer'
