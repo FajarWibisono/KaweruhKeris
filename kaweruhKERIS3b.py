@@ -9,14 +9,14 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, ConversationBufferWindowMemory
 from langchain.prompts import PromptTemplate
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 1. KONFIGURASI API & HALAMAN
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Ganti GROQ_API_KEY dengan kunci Anda sendiri, misalnya di secrets.toml
+# Groq_API KEY
 os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 st.set_page_config(
@@ -62,7 +62,7 @@ PROMPT_INDONESIA = """\
 Gunakan informasi konteks berikut untuk menjawab pertanyaan pengguna dalam bahasa Indonesia yang baik dan terstruktur.
 Jika Anda tidak menemukan jawaban yang sesuai di dalam konteks, tolong katakan:
 
-"Mohon maaf, saya tidak menemukan informasi tersebut dalam dokumen."
+"Mohon maaf, saya tidak menemukan informasi tersebut dalam pelatihan saya."
 
 Konteks: {context}
 Riwayat Chat: {chat_history}
