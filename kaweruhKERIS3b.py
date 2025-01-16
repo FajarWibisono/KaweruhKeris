@@ -91,7 +91,7 @@ def initialize_rag():
         documents = loader.load()
 
         # 4.2 Split Dokumen
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=126)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1800, chunk_overlap=234)
         texts = text_splitter.split_documents(documents)
 
         # 4.3 Embedding Berbahasa Indonesia
@@ -111,9 +111,9 @@ def initialize_rag():
             max_tokens=1024
         )
 
-        # 4.6 Membuat Memory untuk hanya menyimpan 1 pesan terakhir
+        # 4.6 Membuat Memory untuk menyimpan riwayat percakapan
         memory = ConversationBufferWindowMemory(
-            k=1,  # hanya simpan 1 pesan terakhir
+            k=2,  # hanya menyimpan 2 interaksi terakhir
             memory_key='chat_history',
             return_messages=True,
             output_key='answer'
