@@ -59,10 +59,8 @@ if 'chat_history' not in st.session_state:
 # ─────────────────────────────────────────────────────────────────────────────
 # Prompt ini akan memaksa jawaban selalu dalam Bahasa Indonesia.
 PROMPT_INDONESIA = """\
-Gunakan informasi konteks berikut untuk menjawab pertanyaan pengguna dalam bahasa Indonesia yang baik dan terstruktur.
-Jika Anda tidak menemukan jawaban yang sesuai di dalam konteks, tolong katakan:
-
-"Mohon maaf, saya tidak menemukan informasi tersebut dalam pelatihan saya."
+Anda adalah seorang Ahli Keris. Gunakan informasi konteks berikut untuk menjawab berbagai pertanyaan pengguna dalam bahasa Indonesia yang baik dan terstruktur.
+Selalu berikan jawaban terbaik yang dapat kamu berikan.
 
 Konteks: {context}
 Riwayat Chat: {chat_history}
